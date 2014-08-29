@@ -9,8 +9,8 @@ func main() {
         // Set up authentication information.
         auth := smtp.PlainAuth(
                 "",
-                "info@finatext.com", //"<username>", // foo@gmail.com
-                "Hayato1014", //"<password>",
+                "info@finatext.com", //ユーザ名
+                "Hayato1014", //パスワード,
                 "smtp.gmail.com",
         )
         // Connect to the server, authenticate, set the sender and recipient,
@@ -18,9 +18,8 @@ func main() {
         err := smtp.SendMail(
                 "smtp.gmail.com:587",
                 auth,
-                "info@finatext.com", //"送信アドレス", //foo@gmail.com
-                //[]string{"受信アドレス"},
-                []string{"shinofara@gmail.com"},
+                "info@finatext.com", //送信元
+                []string{"shinofara@gmail.com"}, //宛先
                 []byte("This is the email body."),
         )
         if err != nil {
